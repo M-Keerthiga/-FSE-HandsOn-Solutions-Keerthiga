@@ -3,9 +3,7 @@ import java.util.Scanner;
 public class FinancialForecast {
 
     // Recursive method to calculate future value
-    public static double predictFutureValue(double currentValue,
-                                            double growthRate,
-                                            int years) {
+    public static double predictFutureValue(double currentValue, double growthRate, int years) {
 
         // Base Case
         if (years == 0) {
@@ -13,10 +11,7 @@ public class FinancialForecast {
         }
 
         // Recursive Case
-        return predictFutureValue(currentValue,
-                                  growthRate,
-                                  years - 1)
-                                  * (1 + growthRate);
+        return predictFutureValue(currentValue, growthRate, years - 1) * (1 + growthRate);
     }
 
     public static void main(String[] args) {
@@ -37,13 +32,10 @@ public class FinancialForecast {
         growthRate = growthRate / 100;
 
         // Calculate future value
-        double futureValue = predictFutureValue(currentValue,
-                                                growthRate,
-                                                years);
+        double futureValue = predictFutureValue(currentValue, growthRate, years);
 
         // Display result
-        System.out.printf("\nPredicted Future Value after %d years: ₹%.2f",
-                          years, futureValue);
+        System.out.printf("\nPredicted Future Value after %d years: ₹%.2f", years, futureValue);
 
         sc.close();
     }
