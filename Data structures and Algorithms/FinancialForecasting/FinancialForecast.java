@@ -16,27 +16,26 @@ public class FinancialForecast {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-
         // Get user input
-        System.out.print("Enter current investment value: ₹");
-        double currentValue = sc.nextDouble();
-
-        System.out.print("Enter annual growth rate (%): ");
-        double growthRate = sc.nextDouble();
-
-        System.out.print("Enter number of years: ");
-        int years = sc.nextInt();
-
-        // Convert percentage to decimal
-        growthRate = growthRate / 100;
-
-        // Calculate future value
-        double futureValue = predictFutureValue(currentValue, growthRate, years);
-
-        // Display result
-        System.out.printf("\nPredicted Future Value after %d years: ₹%.2f", years, futureValue);
-
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            // Get user input
+            System.out.print("Enter current investment value: ₹");
+            double currentValue = sc.nextDouble();
+            
+            System.out.print("Enter annual growth rate (%): ");
+            double growthRate = sc.nextDouble();
+            
+            System.out.print("Enter number of years: ");
+            int years = sc.nextInt();
+            
+            // Convert percentage to decimal
+            growthRate = growthRate / 100;
+            
+            // Calculate future value
+            double futureValue = predictFutureValue(currentValue, growthRate, years);
+            
+            // Display result
+            System.out.printf("\nPredicted Future Value after %d years: ₹%.2f", years, futureValue);
+        }
     }
 }
