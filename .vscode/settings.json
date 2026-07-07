@@ -2,13 +2,14 @@
     "java.configuration.updateBuildConfiguration": "interactive",
     "java.compile.nullAnalysis.mode": "automatic",
     "java.project.sourcePaths": [
+        "Spring_react/Spring_Core/spring-learn/src/main/java/com/cognizant/spring_learn",
         "Spring_react/Spring_Core/spring-learn-load/src/main/java/com/cognizant/spring_learn",
         "Spring_Core_Maven/Library_Management/src/main/java/com/library",
         "Spring Core_Maven/LibraryManagement/src/main/java/com/library",
         "Design Principles & Design Patterns/SingletonPatternExample",
         "Data structures and Algorithms/FinancialForecasting",
         "Data structures and Algorithms/ECommerceSearch",
-        "Spring_react/Spring_Core/spring-learn/src/main/java/com/cognizant/spring_learn"
+        "Spring_react/Web_Service/Country_Web_Service/spring_learn/src/main/java/com/cognizant/spring_learn"
     ],
     "java.debug.settings.onBuildFailureProceed": true
 }
