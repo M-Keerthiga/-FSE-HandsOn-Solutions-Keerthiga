@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f4f6f8;
+}
+
+.App {
+  max-width: 780px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background-color: #dfe6ee;
+  color: #2c3e50;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tabs button.active {
+  background-color: #2d7dd2;
+  color: white;
+}
+
+.section {
+  background: #ffffff;
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+  color: #34495e;
+  margin-top: 0;
+}
+
+.item-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  background-color: #27ae60;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+.badge.featured {
+  background-color: #e67e22;
+}
+
+.empty-msg {
+  color: #888;
+  font-style: italic;
+}
+
+.info-banner {
+  background: #eaf4ff;
+  border: 1px solid #b6dbff;
+  color: #1f5fa8;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}

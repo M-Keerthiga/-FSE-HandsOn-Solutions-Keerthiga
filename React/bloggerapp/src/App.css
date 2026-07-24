@@ -1,0 +1,16 @@
+.App {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.column {
+  padding: 0 20px;
+  border-left: 4px solid green;
+  min-width: 200px;
+}
+
+.column:first-child {
+  border-left: none;
+}

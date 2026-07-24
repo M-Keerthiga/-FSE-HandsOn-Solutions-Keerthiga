@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f4f6f8;
+}
+
+.App {
+  max-width: 750px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c3e50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.navbar h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.section {
+  background: #ffffff;
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+  color: #34495e;
+  margin-top: 0;
+}
+
+button {
+  background-color: #2d7dd2;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  margin: 5px 8px 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #1f5fa8;
+}
+
+button.logout {
+  background-color: #c0392b;
+}
+
+button.logout:hover {
+  background-color: #922b21;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #ecf0f1;
+}
+
+.warning-banner {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  color: #8a6d3b;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.status {
+  font-weight: bold;
+  color: #1f5fa8;
+}
