@@ -1,0 +1,55 @@
+$ mkdir GitHOL
+$ cd GitHOL
+$ echo "# Git Hands-on Lab" > README.md
+
+$ git init
+Initialized empty Git repository in C:/Users/subha/GitHOL/.git/
+
+$ git remote add origin https://github.com/MAkhi2161/git-hol-lab.git
+
+$ git add .
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+$ git commit -m "Initial commit for Git-T03-HOL_002 hands-on lab"
+[main (root-commit) 435bdb1] Initial commit for Git-T03-HOL_002 hands-on lab
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+$ git branch -M master
+
+$ git push -u origin master
+fatal: unable to access 'https://github.com/MAkhi2161/git-hol-lab.git/': Could not resolve host: github.com
+
+$ git remote remove origin
+$ git remote add origin https://github.com/MAkhi2161/git-hol-lab.git
+
+$ git push -u origin master
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 262 bytes | 43.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/MAkhi2161/git-hol-lab.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+$ echo "# Git Hands-on Lab
+This repository contains hands-on practice for Git cleanup and pushing to remote repositories (Git-T03-HOL_002)." > README.md
+
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+$ git commit -m "Added README with description of Git hands-on lab"
+[master 95846f0] Added README with description of Git hands-on lab
+ 1 file changed, 1 insertion(+)
+
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 328 bytes | 127.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/MAkhi2161/git-hol-lab.git
+   435bdbd..95846f0  master -> master
+

@@ -1,0 +1,85 @@
+##Branching
+  
+subha@DESKTOP-JF5FB2M MINGW64 ~
+$ mkdir GitBranch
+mkdir: cannot create directory ‘GitBranch’: File exists
+
+subha@DESKTOP-JF5FB2M MINGW64 ~ (master)
+$ cd GitBranch
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git init
+Reinitialized existing Git repository in C:/Users/subha/GitBranch/.git/
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ echo "Initial commit" > readme.txt
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git add readme.txt
+warning: in the working copy of 'readme.txt', LF will be replaced by CRLF the next time Git touches it
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git commit -m "Initial commit"
+[main (root-commit) b392968] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.txt
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git branch GitNewBranch
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git checkout GitNewBranch
+Switched to branch 'GitNewBranch'
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (GitNewBranch)
+$ notepad++.exe hello.txt
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (GitNewBranch)
+$ git add hello.txt
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (GitNewBranch)
+$ git commit -m "Added hello.txt in GitNewBranch"
+[GitNewBranch 30b0778] Added hello.txt in GitNewBranch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+
+
+
+##Merging
+   
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (GitNewBranch)
+$ git checkout main
+Switched to branch 'main'
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git diff GitNewBranch
+diff --git a/hello.txt b/hello.txt
+deleted file mode 100644
+index 3844e1b..0000000
+--- a/hello.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-This is a test file for GitNewBranch.
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git merge GitNewBranch
+Updating b392968..30b0778
+Fast-forward
+ hello.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git log --oneline --graph --decorate
+* 30b0778 (HEAD -> main, GitNewBranch) Added hello.txt in GitNewBranch
+* b392968 Initial commit
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git branch -d GitNewBranch
+Deleted branch GitNewBranch (was 30b0778).
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+

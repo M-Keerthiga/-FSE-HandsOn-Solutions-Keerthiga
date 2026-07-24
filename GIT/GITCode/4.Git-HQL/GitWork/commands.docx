@@ -1,0 +1,134 @@
+##Verify if master is in a clean state
+  
+subha@DESKTOP-JF5FB2M MINGW64 ~ (master)
+$ cd ~/GitBranch
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git checkout main
+Already on 'main'
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+------------------------------------------------
+##Create a branch and add a file
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git branch GitWork
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git checkout GitWork
+Switched to branch 'GitWork'
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (GitWork)
+$ notepad++.exe hello.xml
+---------------------------------------------------
+  
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (GitWork)
+$ git add hello.xml
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (GitWork)
+$ git commit -m "Added hello.xml in GitWork"
+[GitWork e293855] Added hello.xml in GitWork
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+-----------------------------------------------------
+##Switch to main and add conflicting file
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (GitWork)
+$ git checkout main
+Switched to branch 'main'
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ notepad++.exe hello.xml
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git add hello.xml
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git commit -m "Added hello.xml in main"
+[main 58265f6] Added hello.xml in main
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+------------------------------------------------
+##View logs and differences
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git log --oneline --graph --decorate --all
+* 58265f6 (HEAD -> main) Added hello.xml in main
+| * e293855 (GitWork) Added hello.xml in GitWork
+|/
+* 30b0778 Added hello.txt in GitNewBranch
+* b392968 Initial commit
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git diff GitWork
+diff --git a/hello.xml b/hello.xml
+index 0bf4c19..dc8ea3d 100644
+--- a/hello.xml
++++ b/hello.xml
+@@ -1 +1 @@
+-<message>Hello from GitWork branch</message>
++<message>Hello from main branch</message>
+------------------------------------------------
+##Merge GitWork into main
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git merge GitWork
+Auto-merging hello.xml
+CONFLICT (add/add): Merge conflict in hello.xml
+Automatic merge failed; fix conflicts and then commit the result.
+------------------------------------------------------------------
+##Resolve the conflict
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main|MERGING)
+$ notepad++.exe hello.xml
+----------------------------------------------------------------
+##Add resolved file and commit
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main|MERGING)
+$ git add hello.xml
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main|MERGING)
+$ git commit -m "Resolved merge conflict in hello.xml"
+[main 97c0818] Resolved merge conflict in hello.xml
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git log --oneline --graph --decorate
+*   97c0818 (HEAD -> main) Resolved merge conflict in hello.xml
+|\
+| * e293855 (GitWork) Added hello.xml in GitWork
+* | 58265f6 Added hello.xml in main
+|/
+* 30b0778 Added hello.txt in GitNewBranch
+* b392968 Initial commit
+--------------------------------------------------
+## Add .gitignore (for backup files)
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ echo "*.orig" > .gitignore
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git add .gitignore
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git commit -m "Added .gitignore for backup files"
+[main ffeb4a7] Added .gitignore for backup files
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+---------------------------------------------------
+##Delete the branch and verify
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git branch -d GitWork
+Deleted branch GitWork (was e293855).
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitBranch (main)
+$ git log --oneline --graph --decorate
+* ffeb4a7 (HEAD -> main) Added .gitignore for backup files
+*   97c0818 Resolved merge conflict in hello.xml
+|\
+| * e293855 Added hello.xml in GitWork
+* | 58265f6 Added hello.xml in main
+|/
+* 30b0778 Added hello.txt in GitNewBranch
+* b392968 Initial commit

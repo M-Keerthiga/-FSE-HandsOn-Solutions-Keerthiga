@@ -1,0 +1,41 @@
+
+subha@DESKTOP-JF5FB2M MINGW64 ~ (master)
+$ mkdir GitIgnoreDemo
+
+subha@DESKTOP-JF5FB2M MINGW64 ~ (master)
+$ cd GitIgnoreDemo
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitIgnoreDemo (master)
+$ git init
+Initialized empty Git repository in C:/Users/subha/GitIgnoreDemo/.git/
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitIgnoreDemo (main)
+$ touch error.log
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitIgnoreDemo (main)
+$ mkdir log
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitIgnoreDemo (main)
+$ touch .gitignore
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitIgnoreDemo (main)
+$ notepad++ .gitignore
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitIgnoreDemo (main)
+$ cat .gitignore
+*.log
+log/
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitIgnoreDemo (main)
+$ git add .gitignore
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitIgnoreDemo (main)
+$ git commit -m "Added .gitignore to ignore .log files and log folder"
+[main (root-commit) d590e37] Added .gitignore to ignore .log files and log folder
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitIgnoreDemo (main)
+$ git status
+On branch main
+nothing to commit, working tree clean

@@ -1,0 +1,30 @@
+
+subha@DESKTOP-JF5FB2M MINGW64 ~ (master)
+$ cd GitDemo
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitDemo (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   welcome.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        COMMIT_EDITMSG
+
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitDemo (main)
+$ git add welcome.txt
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitDemo (main)
+$ git commit
+[main (root-commit) be67942] Added welcome.txt with initial content
+ 1 file changed, 1 insertion(+)
+ create mode 100644 welcome.txt
+
+subha@DESKTOP-JF5FB2M MINGW64 ~/GitDemo (main)
+$ git log --oneline
+be67942 (HEAD -> main) Added welcome.txt with initial content
